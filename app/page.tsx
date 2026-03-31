@@ -13,7 +13,7 @@ export default async function Home({ searchParams }: Props) {
 
   return (
     <div className="app">
-      <h1>todoリスト serverAciton json-server</h1>
+      <h1>Next.js × Supabase Todo App</h1>
 
       <TodoFilter currentFilter={currentFilter}/>
       <TodoList currentFilter={currentFilter} />
