@@ -14,9 +14,10 @@ body {
 
 .app {
   width: 100%;
-  max-width: 800px;
+  max-width: 640px;
   margin: 0 auto;
-gap: 20px;
+  padding: 16px;
+  box-sizing: border-box;
 }
 
 h1, h2, h3 {
