@@ -10,16 +10,15 @@ export async function createTodo(
   formData: FormData,
 ): Promise<State> {
   const content = formData.get("content");
-  if (content === "") {
+  if (typeof content !== "string" || content.trim() === "") {
     return { msg: "入力が空です" };
   }
 
   const { error } = await supabase.from("todos").insert({ content: content });
- 
 
   if (error) {
     return { msg: "登録失敗" };
   }
- revalidatePath("/");
+  revalidatePath("/");
   return { msg: "登録完了" };
 }
