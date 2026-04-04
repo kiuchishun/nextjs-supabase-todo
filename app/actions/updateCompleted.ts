@@ -7,11 +7,12 @@ export async function updateCompleted(formData: FormData) {
   const completed = formData.get("completed");
   const current = completed === "true";
 
-
+ 
   const { error } = await supabase
   .from('todos')
   .update({ completed: !current})
   .eq('id', id)
 
   revalidatePath("/")
+  console.log(error)
 }
